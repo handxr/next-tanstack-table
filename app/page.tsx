@@ -2,7 +2,11 @@ import { columns } from "./columns";
 import { DataTable } from "./data-table";
 
 async function getUsersApi() {
-  const response = await fetch("https://reqres.in/api/users?per_page=12");
+  const response = await fetch("https://reqres.in/api/users?per_page=12", {
+    next: {
+      revalidate: 60 * 60,
+    },
+  });
   return response.json();
 }
 
