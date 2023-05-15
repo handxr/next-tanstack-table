@@ -2,7 +2,7 @@ import { columns } from "./columns";
 import { DataTable } from "./data-table";
 
 async function getUsersApi() {
-  const response = await fetch("https://reqres.in/api/users");
+  const response = await fetch("https://reqres.in/api/users?per_page=12");
   return response.json();
 }
 
